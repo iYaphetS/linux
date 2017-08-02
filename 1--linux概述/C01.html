@@ -1,0 +1,1124 @@
+<!DOCTYPE html> <html> <head> <title>C01</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">  <style> .markdown-preview-enhanced pre { color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); }
+.markdown-preview-enhanced pre .line.cursor-line { background-color: rgba(153, 187, 255, 0.0392157); }
+.markdown-preview-enhanced pre .invisible { color: rgb(171, 178, 191); }
+.markdown-preview-enhanced pre .cursor { border-left: 2px solid rgb(82, 139, 255); }
+.markdown-preview-enhanced pre .selection .region { background-color: rgb(62, 68, 81); }
+.markdown-preview-enhanced pre .bracket-matcher .region { border-bottom: 1px solid rgb(82, 139, 255); box-sizing: border-box; }
+.markdown-preview-enhanced pre .invisible-character { color: rgba(171, 178, 191, 0.14902); }
+.markdown-preview-enhanced pre .indent-guide { color: rgba(171, 178, 191, 0.14902); }
+.markdown-preview-enhanced pre .wrap-guide { background-color: rgba(171, 178, 191, 0.14902); }
+.markdown-preview-enhanced pre .find-result .region.region.region, .markdown-preview-enhanced pre .current-result .region.region.region { border-radius: 2px; transition: border-color 0.4s; background-color: rgba(82, 139, 255, 0.239216); }
+.markdown-preview-enhanced pre .find-result .region.region.region { border: 2px solid transparent; }
+.markdown-preview-enhanced pre .current-result .region.region.region { border: 2px solid rgb(82, 139, 255); transition-duration: 0.1s; }
+.markdown-preview-enhanced pre .gutter .line-number { color: rgb(99, 109, 131); -webkit-font-smoothing: antialiased; }
+.markdown-preview-enhanced pre .gutter .line-number.cursor-line { color: rgb(171, 178, 191); background-color: rgb(44, 49, 58); }
+.markdown-preview-enhanced pre .gutter .line-number.cursor-line-no-selection { background-color: transparent; }
+.markdown-preview-enhanced pre .gutter .line-number .icon-right { color: rgb(171, 178, 191); }
+.markdown-preview-enhanced pre .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before { bottom: -3px; }
+.markdown-preview-enhanced pre .gutter:not(.git-diff-icon) .line-number.git-line-removed::after { content: ""; position: absolute; left: 0px; bottom: 0px; width: 25px; border-bottom: 1px dotted rgba(224, 82, 82, 0.498039); pointer-events: none; }
+.markdown-preview-enhanced pre .gutter .line-number.folded, .markdown-preview-enhanced pre .gutter .line-number::after, .markdown-preview-enhanced pre .fold-marker::after { color: rgb(171, 178, 191); }
+.markdown-preview-enhanced { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; color: rgb(171, 178, 191); overflow: initial; margin: 10px 13px; padding: 2em; box-sizing: border-box; word-wrap: break-word; background-color: rgb(40, 44, 52); }
+.markdown-preview-enhanced[data-use-github-style] { color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
+.markdown-preview-enhanced > :first-child { margin-top: 0px; }
+.markdown-preview-enhanced[is="space-pen-div"] { width: 100%; margin: 0px; z-index: 999; overflow: scroll; font-size: 16px; display: block; position: absolute; }
+.markdown-preview-enhanced[is="space-pen-div"][data-use-github-style] { }
+.markdown-preview-enhanced[is="space-pen-div"][data-use-github-style] ::-webkit-scrollbar-track { box-shadow: rgba(218, 218, 218, 0.6) 0px 0px 3px inset; background-color: rgb(244, 244, 244); }
+.markdown-preview-enhanced[is="space-pen-div"][data-use-github-style] ::-webkit-scrollbar-thumb { border-radius: 10px; border-color: transparent; background-color: rgb(204, 204, 204); }
+.markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { line-height: 1.2; margin-top: 1em; margin-bottom: 16px; color: rgb(255, 255, 255); }
+.markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2, .markdown-preview-enhanced[data-use-github-style] h3, .markdown-preview-enhanced[data-use-github-style] h4, .markdown-preview-enhanced[data-use-github-style] h5, .markdown-preview-enhanced[data-use-github-style] h6 { color: rgb(51, 51, 51); }
+.markdown-preview-enhanced h1 { font-size: 2.4em; font-weight: 300; padding-bottom: 0.3em; border-bottom: 1px solid rgb(75, 83, 98); }
+.markdown-preview-enhanced h2 { font-size: 1.8em; font-weight: 400; padding-bottom: 0.3em; border-bottom: 1px solid rgb(75, 83, 98); }
+.markdown-preview-enhanced h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview-enhanced h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview-enhanced h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview-enhanced h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2 { border-bottom: 1px solid rgb(231, 231, 231); }
+.markdown-preview-enhanced strong { color: rgb(255, 255, 255); }
+.markdown-preview-enhanced[data-use-github-style] strong { color: rgb(51, 51, 51); }
+.markdown-preview-enhanced del { color: rgb(124, 135, 156); }
+.markdown-preview-enhanced a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview-enhanced a { color: rgb(0, 136, 204); text-decoration: none; }
+.markdown-preview-enhanced a:hover { color: rgb(0, 80, 163); text-decoration: none; }
+.markdown-preview-enhanced img { max-width: 100%; }
+.markdown-preview-enhanced > p { margin-top: 0px; margin-bottom: 16px; word-wrap: break-word; }
+.markdown-preview-enhanced > ul, .markdown-preview-enhanced > ol { margin-bottom: 16px; }
+.markdown-preview-enhanced ul, .markdown-preview-enhanced ol { padding-left: 2em; }
+.markdown-preview-enhanced ul.no-list, .markdown-preview-enhanced ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview-enhanced ul ul, .markdown-preview-enhanced ul ol, .markdown-preview-enhanced ol ol, .markdown-preview-enhanced ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview-enhanced li { margin-bottom: 0px; }
+.markdown-preview-enhanced li.task-list-item { list-style: none; }
+.markdown-preview-enhanced li > p { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview-enhanced .task-list-item-checkbox { margin: 0px 0.2em 0.25em -1.6em; vertical-align: middle; }
+.markdown-preview-enhanced .task-list-item-checkbox:hover { cursor: pointer; }
+.markdown-preview-enhanced blockquote { margin: 16px 0px; font-size: inherit; padding: 0px 15px; color: rgb(124, 135, 156); border-left: 4px solid rgb(75, 83, 98); }
+.markdown-preview-enhanced blockquote > :first-child { margin-top: 0px; }
+.markdown-preview-enhanced blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview-enhanced[data-use-github-style] blockquote { color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview-enhanced hr { height: 4px; margin: 32px 0px; border: 0px none; background-color: rgb(75, 83, 98); }
+.markdown-preview-enhanced[data-use-github-style] hr { background-color: rgb(231, 231, 231); }
+.markdown-preview-enhanced table { margin: 10px 0px 15px; border-collapse: collapse; border-spacing: 0px; display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview-enhanced table th { font-weight: bold; color: rgb(255, 255, 255); }
+.markdown-preview-enhanced table td, .markdown-preview-enhanced table th { border: 1px solid rgb(75, 83, 98); padding: 6px 13px; }
+.markdown-preview-enhanced[data-use-github-style] th { color: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] td, .markdown-preview-enhanced[data-use-github-style] th { border: 1px solid rgb(221, 221, 221); }
+.markdown-preview-enhanced dl { padding: 0px; }
+.markdown-preview-enhanced dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview-enhanced dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview-enhanced code { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; color: rgb(255, 255, 255); font-size: 0.85em !important; background-color: rgb(58, 63, 75); }
+.markdown-preview-enhanced[data-use-github-style] code { color: inherit; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview-enhanced pre > code { padding: 0px; margin: 0px; word-break: normal; white-space: pre; border: 0px; font-size: 0.85em !important; background: transparent; }
+.markdown-preview-enhanced .highlight { margin-bottom: 16px; }
+.markdown-preview-enhanced .highlight pre, .markdown-preview-enhanced pre { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; padding: 16px; overflow: auto; line-height: 1.45; color: rgb(171, 178, 191); border: rgb(75, 83, 98); border-radius: 3px; font-size: 0.85em !important; background-color: rgb(49, 54, 63); }
+.markdown-preview-enhanced .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview-enhanced pre { word-wrap: break-word; white-space: normal; word-break: break-all; }
+.markdown-preview-enhanced pre .section { opacity: 1; }
+.markdown-preview-enhanced pre code, .markdown-preview-enhanced pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview-enhanced pre code::before, .markdown-preview-enhanced pre tt::before, .markdown-preview-enhanced pre code::after, .markdown-preview-enhanced pre tt::after { content: normal; }
+.markdown-preview-enhanced p, .markdown-preview-enhanced blockquote, .markdown-preview-enhanced ul, .markdown-preview-enhanced ol, .markdown-preview-enhanced dl, .markdown-preview-enhanced pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview-enhanced pre.editor-colors { margin: 16px 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview-enhanced kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview-enhanced[data-use-github-style] kbd { color: rgb(51, 51, 51); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview-enhanced .pagebreak, .markdown-preview-enhanced .newpage { break-before: page; }
+@media screen and (min-width: 914px) { 
+  .markdown-preview-enhanced { width: 854px; margin: 10px auto; background: rgb(40, 44, 52); }
+}
+@media screen and (max-width: 400px) { 
+  .markdown-preview-enhanced { font-size: 14px; }
+}
+@media screen and (min-width: 914px) { 
+  .markdown-preview-enhanced[data-use-github-style] { background: rgb(255, 255, 255); }
+}
+@media print { 
+  .markdown-preview-enhanced { background-color: rgb(40, 44, 52); }
+  .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { color: rgb(255, 255, 255); break-after: avoid; }
+  .markdown-preview-enhanced blockquote { color: rgb(124, 135, 156); }
+  .markdown-preview-enhanced table, .markdown-preview-enhanced pre { break-inside: avoid; }
+  .markdown-preview-enhanced table { display: table; }
+  .markdown-preview-enhanced img { display: block; max-width: 100%; max-height: 100%; }
+  .markdown-preview-enhanced pre, .markdown-preview-enhanced code { word-wrap: break-word; white-space: normal; }
+}
+@media print { 
+  .markdown-preview-enhanced[data-use-github-style] { background-color: rgb(255, 255, 255); }
+  .markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2, .markdown-preview-enhanced[data-use-github-style] h3, .markdown-preview-enhanced[data-use-github-style] h4, .markdown-preview-enhanced[data-use-github-style] h5, .markdown-preview-enhanced[data-use-github-style] h6 { color: rgb(34, 34, 34); }
+  .markdown-preview-enhanced[data-use-github-style] blockquote { color: rgb(119, 119, 119); }
+  .markdown-preview-enhanced[data-use-github-style] pre { border: 2px solid rgb(246, 246, 246); }
+}
+.markdown-preview-enhanced .mermaid { margin-bottom: 16px; }
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255); }
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid .messageText { fill: rgb(255, 255, 255); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] .messageText { fill: rgb(51, 51, 51); }
+.markdown-preview-enhanced[is="space-pen-div"] .erd { overflow-x: auto; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk { position: relative; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.hide-chunk { display: block !important; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk:hover .run-all-btn { display: block !important; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk:hover .btn-group { opacity: 1; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group { position: absolute; right: 0px; top: 0px; padding: 4px; opacity: 0.4; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .btn { text-align: center; color: rgb(255, 255, 255); float: right; margin-left: 2px; border-radius: 4px; border-style: none; background-image: none; background-color: rgb(147, 187, 124); }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .btn:hover { cursor: pointer; background-color: rgb(119, 170, 90); }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .btn.run-btn { display: block !important; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .run-btn span { display: none; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .run-btn::after { content: "ᕕ(╯°□°)ᕗ"; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .run-btn:hover { cursor: not-allowed; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .output-div { overflow-x: auto; margin-bottom: 16px; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk pre { cursor: text; }
+.markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk.hide-chunk pre.editor-colors, .markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk.hide-chunk .btn-group { display: none; }
+.markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk.hide-chunk .output-div { display: block; }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors, .markdown-preview-enhanced .github-syntax-theme .host { color: rgb(51, 51, 51); background-color: rgb(247, 247, 247); }
+.markdown-preview-enhanced .github-syntax-theme pre { color: rgb(51, 51, 51); background-color: rgb(247, 247, 247); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .gutter, .markdown-preview-enhanced .github-syntax-theme .host .gutter { color: rgb(179, 179, 179); background-color: rgb(255, 255, 255); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .gutter .line-number.cursor-line, .markdown-preview-enhanced .github-syntax-theme .host .gutter .line-number.cursor-line { color: rgb(77, 77, 77); background-color: rgb(245, 245, 245); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .gutter .line-number.cursor-line-no-selection, .markdown-preview-enhanced .github-syntax-theme .host .gutter .line-number.cursor-line-no-selection { color: rgb(77, 77, 77); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .wrap-guide, .markdown-preview-enhanced .github-syntax-theme .host .wrap-guide { color: rgb(223, 223, 223); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .indent-guide, .markdown-preview-enhanced .github-syntax-theme .host .indent-guide { color: rgb(223, 223, 223); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .invisible-character, .markdown-preview-enhanced .github-syntax-theme .host .invisible-character { color: rgb(223, 223, 223); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .search-results .marker .region, .markdown-preview-enhanced .github-syntax-theme .host .search-results .marker .region { border: rgb(0, 0, 0); background-color: transparent; }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors .search-results .marker.current-result .region, .markdown-preview-enhanced .github-syntax-theme .host .search-results .marker.current-result .region { border: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .cursor, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .cursor { border-color: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .selection .region, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .selection .region { background-color: rgba(178, 215, 255, 0.4); }
+.markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .line-number.cursor-line-no-selection, .markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .line.cursor-line, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .line-number.cursor-line-no-selection, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .line.cursor-line { background-color: rgba(240, 240, 240, 0.498039); }
+.markdown-preview-enhanced .github-syntax-theme .comment, .markdown-preview-enhanced .github-syntax-theme .punctuation.comment { color: rgb(176, 176, 176); }
+.markdown-preview-enhanced .github-syntax-theme .string, .markdown-preview-enhanced .github-syntax-theme .string .constant.character.escape { color: rgb(34, 115, 195); }
+.markdown-preview-enhanced .github-syntax-theme .constant.numeric { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .constant.language { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .constant.character, .markdown-preview-enhanced .github-syntax-theme .constant.other.rgb-value { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .constant.numeric.line-number.find-in-files, .markdown-preview-enhanced .github-syntax-theme .constant.numeric.line-number.match.find-in-files { color: rgb(171, 176, 179); }
+.markdown-preview-enhanced .github-syntax-theme .entity.name.class { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .entity.other.inherited-class { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .meta.tag.any.html, .markdown-preview-enhanced .github-syntax-theme .meta.tag.block.any.html { color: rgb(171, 176, 179); }
+.markdown-preview-enhanced .github-syntax-theme .entity.name.tag { color: rgb(99, 163, 92); }
+.markdown-preview-enhanced .github-syntax-theme .entity.name.function { color: rgb(133, 103, 181); }
+.markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name, .markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name .punctuation.definition.entity.scss, .markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name.id.css, .markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name.id.css .punctuation.definition.entity.css, .markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name.class.css .punctuation.definition.entity.css { color: rgb(133, 103, 181); }
+.markdown-preview-enhanced .github-syntax-theme .punctuation.definition.tag.begin.html, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.tag.end.html, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.tag.html, .markdown-preview-enhanced .github-syntax-theme .meta.tag.block.any.html { color: rgb(51, 51, 51); }
+.markdown-preview-enhanced .github-syntax-theme .keyword.control { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .keyword.operator { color: rgb(133, 103, 181); }
+.markdown-preview-enhanced .github-syntax-theme .storage { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .storage.type { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .support.function { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .support.constant { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .support.type, .markdown-preview-enhanced .github-syntax-theme .support.class, .markdown-preview-enhanced .github-syntax-theme .meta.property-name.scss { color: rgb(0, 153, 204); }
+.markdown-preview-enhanced .github-syntax-theme .support.other.variable { color: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme .invalid, .markdown-preview-enhanced .github-syntax-theme .invalid.illegal { color: rgb(248, 248, 248); background-color: rgb(181, 42, 29); }
+.markdown-preview-enhanced .github-syntax-theme .invalid.deprecated { color: rgb(181, 42, 29); background-color: rgb(255, 255, 255); }
+.markdown-preview-enhanced .github-syntax-theme .entity.name.filename.find-in-files { color: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme .source.css .punctuation.definition.entity, .markdown-preview-enhanced .github-syntax-theme .punctuation.terminator.rule.scss { color: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme .source.css .entity.other.attribute-name.pseudo-class, .markdown-preview-enhanced .github-syntax-theme .source.css .entity.other.attribute-name.pseudo-element { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .source.css .meta.value, .markdown-preview-enhanced .github-syntax-theme .source.css .support.constant, .markdown-preview-enhanced .github-syntax-theme .source.css .support.function { color: rgb(99, 163, 92); }
+.markdown-preview-enhanced .github-syntax-theme .source.scss .entity.other.attribute-name.pseudo-class, .markdown-preview-enhanced .github-syntax-theme .source.scss .entity.other.attribute-name.pseudo-element { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .support.constant.property-value, .markdown-preview-enhanced .github-syntax-theme .source.scss .support.function, .markdown-preview-enhanced .github-syntax-theme .meta.property-value.scss { color: rgb(99, 163, 92); }
+.markdown-preview-enhanced .github-syntax-theme .variable, .markdown-preview-enhanced .github-syntax-theme .source.scss .variable, .markdown-preview-enhanced .github-syntax-theme .variable.interpolation.scss, .markdown-preview-enhanced .github-syntax-theme .source.scss .meta.set.variable { color: rgb(222, 104, 173); }
+.markdown-preview-enhanced .github-syntax-theme .keyword.control.else.scss, .markdown-preview-enhanced .github-syntax-theme .keyword.control.if.scss, .markdown-preview-enhanced .github-syntax-theme .keyword.control.content.scss { color: rgb(99, 163, 92); }
+.markdown-preview-enhanced .github-syntax-theme .keyword.other.unit { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .keyword.other.important { color: rgb(235, 69, 53); }
+.markdown-preview-enhanced .github-syntax-theme .entity.name.tag.reference.scss { color: rgb(181, 127, 0); }
+.markdown-preview-enhanced .github-syntax-theme .entity.name.type.new.js { color: rgb(133, 103, 181); }
+.markdown-preview-enhanced .github-syntax-theme .variable.language.js { color: rgb(238, 106, 66); }
+.markdown-preview-enhanced .github-syntax-theme .variable.parameter.function { color: rgb(181, 127, 0); }
+.markdown-preview-enhanced .github-syntax-theme .source.js .meta.function .entity.name.function, .markdown-preview-enhanced .github-syntax-theme .source.js .entity.name.function .meta.function { color: rgb(133, 103, 181); }
+.markdown-preview-enhanced .github-syntax-theme .source.php .entity.name.type.class { color: rgb(238, 106, 66); }
+.markdown-preview-enhanced .github-syntax-theme .punctuation.definition.heading.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.italic.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.bold.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.string.begin.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.string.end.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.metadata.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.link.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.blockquote.markdown, .markdown-preview-enhanced .github-syntax-theme .punctuation.definition.raw.markdown { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .punctuation.section.function.scss { color: rgb(99, 163, 92); }
+.markdown-preview-enhanced .github-syntax-theme .punctuation, .markdown-preview-enhanced .github-syntax-theme .meta.method-call, .markdown-preview-enhanced .github-syntax-theme .meta.method { color: rgb(51, 51, 51); }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .meta.separator { color: rgb(179, 179, 179); }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.raw.block { color: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.raw.inline { color: rgb(0, 0, 0); }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .meta.link, .markdown-preview-enhanced .github-syntax-theme .text.html.markdown .meta.image { color: rgb(65, 131, 196); }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.underline.link, .markdown-preview-enhanced .github-syntax-theme .text.html.markdown .constant.other.reference { font-style: italic; }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.list { color: rgb(238, 106, 66); }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.bold { font-weight: bold; }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.italic { font-style: italic; }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.bold .markup.italic { font-weight: bold; font-style: italic; }
+.markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.italic .markup.bold { font-weight: bold; font-style: italic; }
+.markdown-preview-enhanced .github-syntax-theme .string.quoted.double.html .invalid.illegal.bad-ampersand.html { color: rgb(34, 115, 195); background-color: rgb(255, 255, 255); }
+.markdown-preview-enhanced .github-syntax-theme .bracket-matcher .region { border-bottom: 1px solid rgba(240, 192, 0, 0.8); z-index: 100; background-color: rgba(255, 214, 51, 0.0980392); }
+.markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular { color: rgb(34, 115, 195); }
+.markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular .punctuation.definition.block.begin.angular, .markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular .punctuation.definition.block.end.angular, .markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular .meta.brace.curly.js { color: rgb(173, 28, 93); }
+.markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name.html.angular, .markdown-preview-enhanced .github-syntax-theme .meta.attribute.html.angular { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors, .markdown-preview-enhanced[data-use-github-syntax-theme] .host { color: rgb(51, 51, 51) !important; background-color: rgb(247, 247, 247) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre { color: rgb(51, 51, 51) !important; background-color: rgb(247, 247, 247) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .gutter, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .gutter { color: rgb(179, 179, 179) !important; background-color: rgb(255, 255, 255) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .gutter .line-number.cursor-line, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .gutter .line-number.cursor-line { color: rgb(77, 77, 77) !important; background-color: rgb(245, 245, 245) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .gutter .line-number.cursor-line-no-selection, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .gutter .line-number.cursor-line-no-selection { color: rgb(77, 77, 77) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .wrap-guide, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .wrap-guide { color: rgb(223, 223, 223) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .indent-guide, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .indent-guide { color: rgb(223, 223, 223) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .invisible-character, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .invisible-character { color: rgb(223, 223, 223) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .search-results .marker .region, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .search-results .marker .region { border: rgb(0, 0, 0) !important; background-color: transparent !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors .search-results .marker.current-result .region, .markdown-preview-enhanced[data-use-github-syntax-theme] .host .search-results .marker.current-result .region { border: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors.is-focused .cursor, .markdown-preview-enhanced[data-use-github-syntax-theme] .host(.is-focused) .cursor { border-color: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors.is-focused .selection .region, .markdown-preview-enhanced[data-use-github-syntax-theme] .host(.is-focused) .selection .region { background-color: rgba(178, 215, 255, 0.4) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors.is-focused .line-number.cursor-line-no-selection, .markdown-preview-enhanced[data-use-github-syntax-theme] pre.editor-colors.is-focused .line.cursor-line, .markdown-preview-enhanced[data-use-github-syntax-theme] .host(.is-focused) .line-number.cursor-line-no-selection, .markdown-preview-enhanced[data-use-github-syntax-theme] .host(.is-focused) .line.cursor-line { background-color: rgba(240, 240, 240, 0.498039) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .comment, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.comment { color: rgb(176, 176, 176) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .string, .markdown-preview-enhanced[data-use-github-syntax-theme] .string .constant.character.escape { color: rgb(34, 115, 195) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .constant.numeric { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .constant.language { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .constant.character, .markdown-preview-enhanced[data-use-github-syntax-theme] .constant.other.rgb-value { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .constant.numeric.line-number.find-in-files, .markdown-preview-enhanced[data-use-github-syntax-theme] .constant.numeric.line-number.match.find-in-files { color: rgb(171, 176, 179) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.name.class { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.inherited-class { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.any.html, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.block.any.html { color: rgb(171, 176, 179) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.name.tag { color: rgb(99, 163, 92) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.name.function { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name, .markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name .punctuation.definition.entity.scss, .markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name.id.css, .markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name.id.css .punctuation.definition.entity.css, .markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name.class.css .punctuation.definition.entity.css { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.tag.begin.html, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.tag.end.html, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.tag.html, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.block.any.html { color: rgb(51, 51, 51) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.control { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.operator { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .storage { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .storage.type { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .support.function { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .support.constant { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .support.type, .markdown-preview-enhanced[data-use-github-syntax-theme] .support.class, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.property-name.scss { color: rgb(0, 153, 204) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .support.other.variable { color: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .invalid, .markdown-preview-enhanced[data-use-github-syntax-theme] .invalid.illegal { color: rgb(248, 248, 248) !important; background-color: rgb(181, 42, 29) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .invalid.deprecated { color: rgb(181, 42, 29) !important; background-color: rgb(255, 255, 255) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.name.filename.find-in-files { color: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .source.css .punctuation.definition.entity, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.terminator.rule.scss { color: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .source.css .entity.other.attribute-name.pseudo-class, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.css .entity.other.attribute-name.pseudo-element { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .source.css .meta.value, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.css .support.constant, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.css .support.function { color: rgb(99, 163, 92) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .source.scss .entity.other.attribute-name.pseudo-class, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.scss .entity.other.attribute-name.pseudo-element { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .support.constant.property-value, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.scss .support.function, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.property-value.scss { color: rgb(99, 163, 92) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .variable, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.scss .variable, .markdown-preview-enhanced[data-use-github-syntax-theme] .variable.interpolation.scss, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.scss .meta.set.variable { color: rgb(222, 104, 173) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.control.else.scss, .markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.control.if.scss, .markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.control.content.scss { color: rgb(99, 163, 92) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.other.unit { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .keyword.other.important { color: rgb(235, 69, 53) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.name.tag.reference.scss { color: rgb(181, 127, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.name.type.new.js { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .variable.language.js { color: rgb(238, 106, 66) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .variable.parameter.function { color: rgb(181, 127, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .source.js .meta.function .entity.name.function, .markdown-preview-enhanced[data-use-github-syntax-theme] .source.js .entity.name.function .meta.function { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .source.php .entity.name.type.class { color: rgb(238, 106, 66) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.heading.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.italic.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.bold.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.string.begin.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.string.end.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.metadata.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.link.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.blockquote.markdown, .markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.definition.raw.markdown { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation.section.function.scss { color: rgb(99, 163, 92) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .punctuation, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.method-call, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.method { color: rgb(51, 51, 51) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .meta.separator { color: rgb(179, 179, 179) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.raw.block { color: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.raw.inline { color: rgb(0, 0, 0) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .meta.link, .markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .meta.image { color: rgb(65, 131, 196) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.underline.link, .markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .constant.other.reference { font-style: italic !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.list { color: rgb(238, 106, 66) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.bold { font-weight: bold !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.italic { font-style: italic !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.bold .markup.italic { font-weight: bold !important; font-style: italic !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.italic .markup.bold { font-weight: bold !important; font-style: italic !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .string.quoted.double.html .invalid.illegal.bad-ampersand.html { color: rgb(34, 115, 195) !important; background-color: rgb(255, 255, 255) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .bracket-matcher .region { border-bottom: 1px solid rgba(240, 192, 0, 0.8) !important; z-index: 100 !important; background-color: rgba(255, 214, 51, 0.0980392) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular { color: rgb(34, 115, 195) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular .punctuation.definition.block.begin.angular, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular .punctuation.definition.block.end.angular, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular .meta.brace.curly.js { color: rgb(173, 28, 93) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name.html.angular, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.attribute.html.angular { color: rgb(133, 103, 181) !important; }
+.markdown-preview-enhanced[data-presentation-mode] { font-size: 24px; width: 100%; box-sizing: border-box; margin: 0px; padding: 0px; }
+.markdown-preview-enhanced[data-presentation-mode] h1, .markdown-preview-enhanced[data-presentation-mode] h2, .markdown-preview-enhanced[data-presentation-mode] h3, .markdown-preview-enhanced[data-presentation-mode] h4, .markdown-preview-enhanced[data-presentation-mode] h5, .markdown-preview-enhanced[data-presentation-mode] h6 { margin-top: 0px; }
+.markdown-preview-enhanced[data-presentation-mode] strong { font-weight: bold; }
+.markdown-preview-enhanced[data-presentation-mode]::-webkit-scrollbar { display: none; }
+.markdown-preview-enhanced .slides { text-align: left !important; }
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255); }
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255); }
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255); }
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255); }
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255); }
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51); }
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: #ffffff !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+ /* Flowchart variables */
+/* Sequence Diagram variables */
+/* Gantt chart variables */
+.mermaid .label {
+  color: #333;
+}
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: #ECECFF;
+  stroke: #CCCCFF;
+  stroke-width: 1px;
+}
+.mermaid .edgePath .path {
+  stroke: #333333;
+}
+.mermaid .edgeLabel {
+  background-color: #e8e8e8;
+}
+.mermaid .cluster rect {
+  fill: #ffffde !important;
+  rx: 4 !important;
+  stroke: #aaaa33 !important;
+  stroke-width: 1px !important;
+}
+.mermaid .cluster text {
+  fill: #333;
+}
+.mermaid .actor {
+  stroke: #CCCCFF;
+  fill: #ECECFF;
+}
+.mermaid text.actor {
+  fill: black;
+  stroke: none;
+}
+.mermaid .actor-line {
+  stroke: grey;
+}
+.mermaid .messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #333;
+}
+.mermaid .messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  stroke: #333;
+}
+.mermaid #arrowhead {
+  fill: #333;
+}
+.mermaid #crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important;
+}
+.mermaid .messageText {
+  fill: #333;
+  stroke: none;
+}
+.mermaid .labelBox {
+  stroke: #CCCCFF;
+  fill: #ECECFF;
+}
+.mermaid .labelText {
+  fill: black;
+  stroke: none;
+}
+.mermaid .loopText {
+  fill: black;
+  stroke: none;
+}
+.mermaid .loopLine {
+  stroke-width: 2;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #CCCCFF;
+}
+.mermaid .note {
+  stroke: #aaaa33;
+  fill: #fff5ad;
+}
+.mermaid .noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+/** Section styling */
+.mermaid .section {
+  stroke: none;
+  opacity: 0.2;
+}
+.mermaid .section0 {
+  fill: rgba(102, 102, 255, 0.49);
+}
+.mermaid .section2 {
+  fill: #fff400;
+}
+.mermaid .section1,
+.mermaid .section3 {
+  fill: white;
+  opacity: 0.2;
+}
+.mermaid .sectionTitle0 {
+  fill: #333;
+}
+.mermaid .sectionTitle1 {
+  fill: #333;
+}
+.mermaid .sectionTitle2 {
+  fill: #333;
+}
+.mermaid .sectionTitle3 {
+  fill: #333;
+}
+.mermaid .sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+}
+/* Grid and axis */
+.mermaid .grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges;
+}
+.mermaid .grid path {
+  stroke-width: 0;
+}
+/* Today line */
+.mermaid .today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+/* Task styling */
+/* Default task */
+.mermaid .task {
+  stroke-width: 2;
+}
+.mermaid .taskText {
+  text-anchor: middle;
+  font-size: 11px;
+}
+.mermaid .taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px;
+}
+.mermaid .taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px;
+}
+/* Specific task settings for the sections*/
+.mermaid .taskText0,
+.mermaid .taskText1,
+.mermaid .taskText2,
+.mermaid .taskText3 {
+  fill: white;
+}
+.mermaid .task0,
+.mermaid .task1,
+.mermaid .task2,
+.mermaid .task3 {
+  fill: #8a90dd;
+  stroke: #534fbc;
+}
+.mermaid .taskTextOutside0,
+.mermaid .taskTextOutside2 {
+  fill: black;
+}
+.mermaid .taskTextOutside1,
+.mermaid .taskTextOutside3 {
+  fill: black;
+}
+/* Active task */
+.mermaid .active0,
+.mermaid .active1,
+.mermaid .active2,
+.mermaid .active3 {
+  fill: #bfc7ff;
+  stroke: #534fbc;
+}
+.mermaid .activeText0,
+.mermaid .activeText1,
+.mermaid .activeText2,
+.mermaid .activeText3 {
+  fill: black !important;
+}
+/* Completed task */
+.mermaid .done0,
+.mermaid .done1,
+.mermaid .done2,
+.mermaid .done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2;
+}
+.mermaid .doneText0,
+.mermaid .doneText1,
+.mermaid .doneText2,
+.mermaid .doneText3 {
+  fill: black !important;
+}
+/* Tasks on the critical line */
+.mermaid .crit0,
+.mermaid .crit1,
+.mermaid .crit2,
+.mermaid .crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2;
+}
+.mermaid .activeCrit0,
+.mermaid .activeCrit1,
+.mermaid .activeCrit2,
+.mermaid .activeCrit3 {
+  stroke: #ff8888;
+  fill: #bfc7ff;
+  stroke-width: 2;
+}
+.mermaid .doneCrit0,
+.mermaid .doneCrit1,
+.mermaid .doneCrit2,
+.mermaid .doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges;
+}
+.mermaid .doneCritText0,
+.mermaid .doneCritText1,
+.mermaid .doneCritText2,
+.mermaid .doneCritText3 {
+  fill: black !important;
+}
+.mermaid .activeCritText0,
+.mermaid .activeCritText1,
+.mermaid .activeCritText2,
+.mermaid .activeCritText3 {
+  fill: black !important;
+}
+.mermaid .titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black;
+}
+/*
+
+
+*/
+.mermaid .node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+}
+ </style> <link rel="stylesheet" href="file:////Users/xueguoliang/.atom/packages/markdown-preview-enhanced/node_modules/katex/dist/katex.min.css">  </head> <body class="markdown-preview-enhanced " data-use-github-style data-use-github-syntax-theme > <ul>
+<li><p class="sync-line" data-line="3"><a href="#&#x7B2C;&#x4E00;&#x7AE0;-&#x6982;&#x8FF0;">第一章 概述</a>
+<ul>
+<li><p class="sync-line" data-line="4"><a href="#11-&#x524D;&#x8A00;">1.1 前言</a></p></li>
+<li><p class="sync-line" data-line="5"><a href="#12-&#x7CFB;&#x7EDF;&#x7EC4;&#x6210;">1.2 系统组成</a></p></li>
+<li><p class="sync-line" data-line="6"><a href="#13-&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;">1.3 操作系统和应用程序</a></p></li>
+<li><p class="sync-line" data-line="7"><a href="#14-&#x542F;&#x52A8;&#x548C;&#x767B;&#x9646;">1.4 启动和登陆</a></p></li>
+<li><p class="sync-line" data-line="8"><a href="#15-&#x6587;&#x4EF6;">1.5 文件</a></p></li>
+<li><p class="sync-line" data-line="9"><a href="#&#x8865;&#x5145;&#x8DEF;&#x5F84;">补充：路径</a></p></li>
+<li><p class="sync-line" data-line="10"><a href="#16-&#x7A0B;&#x5E8F;-&#x8FDB;&#x7A0B;">1.6 程序、进程</a></p></li>
+<li><p class="sync-line" data-line="11"><a href="#17-&#x9519;&#x8BEF;&#x5904;&#x7406;">1.7 错误处理</a></p></li>
+<li><p class="sync-line" data-line="12"><a href="#18-&#x7528;&#x6237;-&#x7EC4;-&#x6587;&#x4EF6;&#x6743;&#x9650;">1.8 用户、组、文件权限</a></p></li>
+<li><p class="sync-line" data-line="13"><a href="#19-&#x4FE1;&#x53F7;">1.9 信号</a></p></li>
+<li><p class="sync-line" data-line="14"><a href="#110-&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x548C;&#x5E93;&#x51FD;&#x6570;">1.10 系统调用和库函数</a></p></li>
+</ul></p></li>
+</ul>
+<h1 class="sync-line" data-line="18" id="&#x7B2C;&#x4E00;&#x7AE0;-&#x6982;&#x8FF0;">第一章 概述</h1>
+<h2 class="sync-line" data-line="19" id="11-&#x524D;&#x8A00;">1.1 前言</h2>
+<p class="sync-line" data-line="20">本章讨论系统的概念，从硬件、操作系统角度更加深刻的理解计算机系统，并快速浏览Linux系统提供的服务。</p>
+<h2 class="sync-line" data-line="23" id="12-&#x7CFB;&#x7EDF;&#x7EC4;&#x6210;">1.2 系统组成</h2>
+<div class="mermaid"><svg id="mermaidChart29" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 934 390" style="max-width:934px;"><style type="text/css" title="mermaid-svg-internal-css">/*  */
+#mermaidChart29 .node&gt;rect { ; }
+#mermaidChart29 .node text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart29 .edgeLabel text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart29 .cluster rect  { rx:4px; fill: rgb(255, 255, 222); rx: 4px; stroke: rgb(170, 170, 51); stroke-width: 1px; }
+*, ::before, ::after { box-sizing: border-box;}
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255);}
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .label { color: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .node rect, [data-mermaid-theme="mermaid.css"] .mermaid .node circle, [data-mermaid-theme="mermaid.css"] .mermaid .node ellipse, [data-mermaid-theme="mermaid.css"] .mermaid .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px;}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgeLabel { background-color: rgb(232, 232, 232);}
+* { box-sizing: border-box;}
+/*  */
+</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M358.5,48.311764705882354L172,90L172,115" marker-end="url(#arrowhead1767)" style="fill:none"></path><defs><marker id="arrowhead1767" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M410.5,47.90481400437637L613,90L613,115" marker-end="url(#arrowhead1768)" style="fill:none"></path><defs><marker id="arrowhead1768" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M146,155.93283582089552L105,185L105,210" marker-end="url(#arrowhead1769)" style="fill:none"></path><defs><marker id="arrowhead1769" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M198,155.93283582089552L239,185L239,210" marker-end="url(#arrowhead1770)" style="fill:none"></path><defs><marker id="arrowhead1770" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M587,142.33365949119374L357.5,185L357.5,210" marker-end="url(#arrowhead1771)" style="fill:none"></path><defs><marker id="arrowhead1771" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M587,145.5718954248366L460,185L460,210" marker-end="url(#arrowhead1772)" style="fill:none"></path><defs><marker id="arrowhead1772" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M588.8421052631579,160L562,185L562,210" marker-end="url(#arrowhead1773)" style="fill:none"></path><defs><marker id="arrowhead1773" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M637.1578947368421,160L664,185L664,210" marker-end="url(#arrowhead1774)" style="fill:none"></path><defs><marker id="arrowhead1774" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M639,145.5718954248366L766,185L766,210" marker-end="url(#arrowhead1775)" style="fill:none"></path><defs><marker id="arrowhead1775" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M639,142.34313725490196L868,185L868,210" marker-end="url(#arrowhead1776)" style="fill:none"></path><defs><marker id="arrowhead1776" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M77.05263157894737,255L46,280L46,305" marker-end="url(#arrowhead1777)" style="fill:none"></path><defs><marker id="arrowhead1777" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M132.94736842105263,255L164,280L164,305" marker-end="url(#arrowhead1778)" style="fill:none"></path><defs><marker id="arrowhead1778" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g class="node" id="&#x7CFB;&#x7EDF;" transform="translate(384.5,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">系统</div></foreignobject></g></g></g><g class="node" id="&#x8F6F;&#x4EF6;" transform="translate(172,137.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">软件</div></foreignobject></g></g></g><g class="node" id="&#x786C;&#x4EF6;" transform="translate(613,137.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">硬件</div></foreignobject></g></g></g><g class="node" id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" transform="translate(105,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.5" width="84" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.5)"><foreignobject width="64" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">操作系统</div></foreignobject></g></g></g><g class="node" id="&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" transform="translate(239,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.5" width="84" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.5)"><foreignobject width="64" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">应用程序</div></foreignobject></g></g></g><g class="node" id="CPU" transform="translate(357.5,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26.5" y="-22.5" width="53" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16.5,-12.5)"><foreignobject width="33" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CPU</div></foreignobject></g></g></g><g class="node" id="&#x5185;&#x5B58;" transform="translate(460,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">内存</div></foreignobject></g></g></g><g class="node" id="&#x786C;&#x76D8;" transform="translate(562,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">硬盘</div></foreignobject></g></g></g><g class="node" id="&#x952E;&#x76D8;" transform="translate(664,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">键盘</div></foreignobject></g></g></g><g class="node" id="&#x9F20;&#x6807;" transform="translate(766,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">鼠标</div></foreignobject></g></g></g><g class="node" id="&#x663E;&#x5361;" transform="translate(868,232.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">显卡</div></foreignobject></g></g></g><g class="node" id="&#x5185;&#x6838;" transform="translate(46,327.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">内核</div></foreignobject></g></g></g><g class="node" id="&#x7CFB;&#x7EDF;&#x8F6F;&#x4EF6;" transform="translate(164,327.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.5" width="84" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.5)"><foreignobject width="64" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">系统软件</div></foreignobject></g></g></g></g></g></g></svg></div>
+<h2 class="sync-line" data-line="40" id="13-&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;">1.3 操作系统和应用程序</h2>
+<blockquote>
+<p class="sync-line" data-line="41">操作系统这个词语有二意性，有时候指内核，有时候指内核和系统工具软件的组合。</p>
+</blockquote>
+<div class="mermaid"><svg id="mermaidChart30" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 441 200" style="max-width:441px;"><style type="text/css" title="mermaid-svg-internal-css">/*  */
+#mermaidChart30 .node&gt;rect { ; }
+#mermaidChart30 .node text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart30 .edgeLabel text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart30 .cluster rect  { rx:4px; fill: rgb(255, 255, 222); rx: 4px; stroke: rgb(170, 170, 51); stroke-width: 1px; }
+*, ::before, ::after { box-sizing: border-box;}
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255);}
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .label { color: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .node rect, [data-mermaid-theme="mermaid.css"] .mermaid .node circle, [data-mermaid-theme="mermaid.css"] .mermaid .node ellipse, [data-mermaid-theme="mermaid.css"] .mermaid .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px;}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgeLabel { background-color: rgb(232, 232, 232);}
+* { box-sizing: border-box;}
+/*  */
+</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M179.5,53.9L46.5,90L46.5,115" marker-end="url(#arrowhead1788)" style="fill:none"></path><defs><marker id="arrowhead1788" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M194.5,65L164.5,90L164.5,115" marker-end="url(#arrowhead1789)" style="fill:none"></path><defs><marker id="arrowhead1789" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M248.5,65L278.5,90L278.5,115" marker-end="url(#arrowhead1790)" style="fill:none"></path><defs><marker id="arrowhead1790" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M263.5,55.4126213592233L376,90L376,115" marker-end="url(#arrowhead1791)" style="fill:none"></path><defs><marker id="arrowhead1791" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g class="node" id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" transform="translate(221.5,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-42" y="-22.5" width="84" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.5)"><foreignobject width="64" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">操作系统</div></foreignobject></g></g></g><g class="node" id="linux" transform="translate(46.5,137.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26.5" y="-22.5" width="53" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16.5,-12.5)"><foreignobject width="33" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">linux</div></foreignobject></g></g></g><g class="node" id="windows" transform="translate(164.5,137.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-41.5" y="-22.5" width="83" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31.5,-12.5)"><foreignobject width="63" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">windows</div></foreignobject></g></g></g><g class="node" id="osx" transform="translate(278.5,137.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.5" y="-22.5" width="45" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.5,-12.5)"><foreignobject width="25" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">osx</div></foreignobject></g></g></g><g class="node" id="unix" transform="translate(376,137.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-25" y="-22.5" width="50" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-15,-12.5)"><foreignobject width="30" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">unix</div></foreignobject></g></g></g></g></g></g></svg></div>
+<p class="sync-line" data-line="50">操作系统是管理系统硬件的软件。操作系统是直接运行在裸机之上。其他应用软件运行在操作系统之上。</p>
+<p class="sync-line" data-line="52">操作系统本身提供操作接口，支持用户通过该接口来操作 系统，但是系统本身提供的功能，不足于完成用户需求时，则需要开发应用程序来拓展系统功能。</p>
+<p class="sync-line" data-line="54">发行版：<br>
+不同的公司使用Linux内核，加上自己开发的系统工具软件，一起发布的Linux操作系统版本。</p>
+<h2 class="sync-line" data-line="57" id="14-&#x542F;&#x52A8;&#x548C;&#x767B;&#x9646;">1.4 启动和登陆</h2>
+<div class="mermaid"><svg id="mermaidChart31" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 759 105" style="max-width:759px;"><style type="text/css" title="mermaid-svg-internal-css">/*  */
+#mermaidChart31 .node&gt;rect { ; }
+#mermaidChart31 .node text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart31 .edgeLabel text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart31 .cluster rect  { rx:4px; fill: rgb(255, 255, 222); rx: 4px; stroke: rgb(170, 170, 51); stroke-width: 1px; }
+*, ::before, ::after { box-sizing: border-box;}
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255);}
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .label { color: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .node rect, [data-mermaid-theme="mermaid.css"] .mermaid .node circle, [data-mermaid-theme="mermaid.css"] .mermaid .node ellipse, [data-mermaid-theme="mermaid.css"] .mermaid .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px;}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgeLabel { background-color: rgb(232, 232, 232);}
+* { box-sizing: border-box;}
+/*  */
+</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M72,42.5L97,42.5L122,42.5" marker-end="url(#arrowhead1823)" style="fill:none"></path><defs><marker id="arrowhead1823" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M204,42.5L229,42.5L254,42.5" marker-end="url(#arrowhead1824)" style="fill:none"></path><defs><marker id="arrowhead1824" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M307,42.5L332,42.5L357,42.5" marker-end="url(#arrowhead1825)" style="fill:none"></path><defs><marker id="arrowhead1825" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M421,42.5L446,42.5L471,42.5" marker-end="url(#arrowhead1826)" style="fill:none"></path><defs><marker id="arrowhead1826" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M512,42.5L537,42.5L562,42.5" marker-end="url(#arrowhead1827)" style="fill:none"></path><defs><marker id="arrowhead1827" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M616,42.5L641,42.5L666,42.5" marker-end="url(#arrowhead1828)" style="fill:none"></path><defs><marker id="arrowhead1828" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g class="node" id="&#x4E0A;&#x7535;" transform="translate(46,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">上电</div></foreignobject></g></g></g><g class="node" id="&#x4E3B;&#x677F;bios" transform="translate(163,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-41" y="-22.5" width="82" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31,-12.5)"><foreignobject width="62" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">主板bios</div></foreignobject></g></g></g><g class="node" id="boot" transform="translate(280.5,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26.5" y="-22.5" width="53" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16.5,-12.5)"><foreignobject width="33" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">boot</div></foreignobject></g></g></g><g class="node" id="kernel" transform="translate(389,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-32" y="-22.5" width="64" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-22,-12.5)"><foreignobject width="44" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">kernel</div></foreignobject></g></g></g><g class="node" id="init" transform="translate(491.5,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-20.5" y="-22.5" width="41" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-10.5,-12.5)"><foreignobject width="21" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">init</div></foreignobject></g></g></g><g class="node" id="login" transform="translate(589,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-27" y="-22.5" width="54" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-17,-12.5)"><foreignobject width="34" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">login</div></foreignobject></g></g></g><g class="node" id="shell" transform="translate(692.5,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-26.5" y="-22.5" width="53" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16.5,-12.5)"><foreignobject width="33" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">shell</div></foreignobject></g></g></g></g></g></g></svg></div>
+<p class="sync-line" data-line="68">配置文件：<br>
+/etc/profile：系统启动时被执行<br>
+~/.bashrc：用户登陆时会调用</p>
+<ul>
+<li><p class="sync-line" data-line="72">主板bios：初始化主板，初始化硬盘</p></li>
+<li><p class="sync-line" data-line="73">boot：bootloader，可以用来选择启动的操作系统</p></li>
+<li><p class="sync-line" data-line="74">kernel：初始化硬件</p></li>
+<li><p class="sync-line" data-line="75">init进程：Linux系统的第一个程序，会执行/etc/profile脚本</p></li>
+<li><p class="sync-line" data-line="76">login进程：提供用户接口，供用户登陆，会执行/etc/.bashrc脚本</p></li>
+<li><p class="sync-line" data-line="77">shell进程：提供用户接口，供用户输入命令，shell会解析命令，操作计算机</p></li>
+</ul>
+<h2 class="sync-line" data-line="79" id="15-&#x6587;&#x4EF6;">1.5 文件</h2>
+<p class="sync-line" data-line="80">文件是一个重要的概念，一般定义为信息的集合。计算机做为信息处理的机器，文件是计算机处理的对象。</p>
+<p class="sync-line" data-line="82">在Unix和Linux系统中，泛化了文件的概念，设备也被抽象成文件对象来进行操作。</p>
+<p class="sync-line" data-line="84">数据的集合叫做文件。<br>
+IT行业处理信息：转换，传输，存储</p>
+<h2 class="sync-line" data-line="88" id="&#x8865;&#x5145;&#x8DEF;&#x5F84;">补充：路径</h2>
+<p class="sync-line" data-line="89">/: 根目录<br>
+/aaa/bbb/ccc：以/分割文件名<br>
+HOME目录：使用~表示，其实是你的用户目录，一般来说，一个用户只能操作他自己的HOME目录，其他目录是不能写的。使用cd命令，默认切换到HOME目录。<br>
+当前目录：<br>
+相对路径和绝对路径：<br>
+相对路径和绝对路径转换：realpath</p>
+<h2 class="sync-line" data-line="97" id="16-&#x7A0B;&#x5E8F;-&#x8FDB;&#x7A0B;">1.6 程序、进程</h2>
+<div class="mermaid"><svg id="mermaidChart32" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 524 300" style="max-width:524px;"><style type="text/css" title="mermaid-svg-internal-css">/*  */
+#mermaidChart32 .node&gt;rect { ; }
+#mermaidChart32 .node text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart32 .edgeLabel text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart32 .cluster rect  { rx:4px; fill: rgb(255, 255, 222); rx: 4px; stroke: rgb(170, 170, 51); stroke-width: 1px; }
+*, ::before, ::after { box-sizing: border-box;}
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255);}
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .label { color: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .node rect, [data-mermaid-theme="mermaid.css"] .mermaid .node circle, [data-mermaid-theme="mermaid.css"] .mermaid .node ellipse, [data-mermaid-theme="mermaid.css"] .mermaid .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px;}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgeLabel { background-color: rgb(232, 232, 232);}
+[data-mermaid-theme="mermaid.css"] .mermaid .cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .cluster text { fill: rgb(51, 51, 51);}
+* { box-sizing: border-box;}
+/*  */
+</style><g><g class="output"><g class="clusters"><g class="cluster" id="subGraph1" transform="translate(252,212.5)" style="opacity: 1;"><rect width="464" height="95" x="-232" y="-47.5"></rect><g class="label"><g transform="translate(0,0)"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignobject></g></g><text x="0" y="-33.5" fill="black" stroke="none" id="mermaidChart32Text" style="text-anchor: middle;"> 内存</text></g><g class="cluster" id="subGraph0" transform="translate(264.75,67.5)" style="opacity: 1;"><rect width="438.5" height="95" x="-219.25" y="-47.5"></rect><g class="label"><g transform="translate(0,0)"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignobject></g></g><text x="0" y="-33.5" fill="black" stroke="none" id="mermaidChart32Text" style="text-anchor: middle;"> 硬盘</text></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M166,80.5518018018018L85.5,115L85.5,140L85.5,165L85.5,190" marker-end="url(#arrowhead1870)" style="fill:none"></path><defs><marker id="arrowhead1870" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M196.5,90L196.5,115L196.5,140L196.5,165L196.5,190" marker-end="url(#arrowhead1871)" style="fill:none"></path><defs><marker id="arrowhead1871" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M227,80.5518018018018L307.5,115L307.5,140L307.5,165L307.5,190" marker-end="url(#arrowhead1872)" style="fill:none"></path><defs><marker id="arrowhead1872" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M418.5,90L418.5,115L418.5,140L418.5,165L418.5,190" marker-end="url(#arrowhead1873)" style="fill:none"></path><defs><marker id="arrowhead1873" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g class="node" id="&#x8FDB;&#x7A0B;1" transform="translate(85.5,212.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.5" y="-22.5" width="61" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.5,-12.5)"><foreignobject width="41" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">进程1</div></foreignobject></g></g></g><g class="node" id="&#x8FDB;&#x7A0B;2" transform="translate(196.5,212.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.5" y="-22.5" width="61" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.5,-12.5)"><foreignobject width="41" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">进程2</div></foreignobject></g></g></g><g class="node" id="&#x8FDB;&#x7A0B;3" transform="translate(307.5,212.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.5" y="-22.5" width="61" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.5,-12.5)"><foreignobject width="41" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">进程3</div></foreignobject></g></g></g><g class="node" id="&#x8FDB;&#x7A0B;4" transform="translate(418.5,212.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.5" y="-22.5" width="61" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.5,-12.5)"><foreignobject width="41" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">进程4</div></foreignobject></g></g></g><g class="node" id="&#x7A0B;&#x5E8F;1" transform="translate(196.5,67.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.5" y="-22.5" width="61" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.5,-12.5)"><foreignobject width="41" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">程序1</div></foreignobject></g></g></g><g class="node" id="&#x7A0B;&#x5E8F;2" transform="translate(418.5,67.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-30.5" y="-22.5" width="61" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-20.5,-12.5)"><foreignobject width="41" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">程序2</div></foreignobject></g></g></g></g></g></g></svg></div>
+<h2 class="sync-line" data-line="115" id="17-&#x9519;&#x8BEF;&#x5904;&#x7406;">1.7 错误处理</h2>
+<p class="sync-line" data-line="116">系统调用在<strong>一般情况下</strong>返回整数，并且0表示成功，小于0表示失败。当系统调用返回失败时，可以通过errno获得错误码，通过strerror获取错误解释，或者直接通过perror在标准错误文件中，输出错误信息。</p>
+<pre class="editor-colors lang-text sync-line" data-line="117"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>int&nbsp;main()</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>int&nbsp;fd&nbsp;=&nbsp;open(&quot;a.txt&quot;,&nbsp;O_RDWR);</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;if(fd&nbsp;&lt;&nbsp;0)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>printf(&quot;errno&nbsp;is&nbsp;%d,&nbsp;error&nbsp;string=%s\n&quot;,&nbsp;errno,&nbsp;strerror(errno));</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;perror(&quot;open&quot;);</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>}</span></span></span></div></pre>
+<h2 class="sync-line" data-line="128" id="18-&#x7528;&#x6237;-&#x7EC4;-&#x6587;&#x4EF6;&#x6743;&#x9650;">1.8 用户、组、文件权限</h2>
+<p class="sync-line" data-line="129">Linux是多用户系统，支持多个用户同时登陆系统。<br>
+为了安全起见，需要对系统的权限加于规范。</p>
+<h2 class="sync-line" data-line="132" id="19-&#x4FE1;&#x53F7;">1.9 信号</h2>
+<p class="sync-line" data-line="133">信号是进程通信的一种手段，某个进程收到信号，该信号可能来自内核、来自其它进程或者来自用户操作。例如：当用户按下ctrl+c时，其实是给前台进程发送了一个信号。</p>
+<h2 class="sync-line" data-line="135" id="110-&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x548C;&#x5E93;&#x51FD;&#x6570;">1.10 系统调用和库函数</h2>
+<p class="sync-line" data-line="136">学习Linux系统开发接口时，程序员也需要学习一般常用的第三方库，来拓展程序员的编程能力。</p>
+<div class="mermaid"><svg id="mermaidChart33" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 961 520" style="max-width:961px;"><style type="text/css" title="mermaid-svg-internal-css">/*  */
+#mermaidChart33 .node&gt;rect { ; }
+#mermaidChart33 .node text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart33 .edgeLabel text  { fill:#000; stroke:none; font-weight:300; font-family:"Helvetica Neue",Helvetica,Arial,sans-serf; font-size:14px; }
+#mermaidChart33 .cluster rect  { rx:4px; fill: rgb(255, 255, 222); rx: 4px; stroke: rgb(170, 170, 51); stroke-width: 1px; }
+*, ::before, ::after { box-sizing: border-box;}
+.markdown-preview-enhanced .mermaid .edgePath .path { stroke: rgb(255, 255, 255);}
+.markdown-preview-enhanced .mermaid .edgePath marker path { fill: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced .mermaid line, .markdown-preview-enhanced .mermaid marker { stroke: rgb(255, 255, 255) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+.markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important;}
+.markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .label { color: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .node rect, [data-mermaid-theme="mermaid.css"] .mermaid .node circle, [data-mermaid-theme="mermaid.css"] .mermaid .node ellipse, [data-mermaid-theme="mermaid.css"] .mermaid .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px;}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgePath .path { stroke: rgb(51, 51, 51);}
+[data-mermaid-theme="mermaid.css"] .mermaid .edgeLabel { background-color: rgb(232, 232, 232);}
+[data-mermaid-theme="mermaid.css"] .mermaid .cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important;}
+[data-mermaid-theme="mermaid.css"] .mermaid .cluster text { fill: rgb(51, 51, 51);}
+* { box-sizing: border-box;}
+/*  */
+</style><g><g class="output"><g class="clusters"><g class="cluster" id="subGraph2" transform="translate(521.5,250)" style="opacity: 1;"><rect width="799" height="300" x="-399.5" y="-150"></rect><g class="label"><g transform="translate(0,0)"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignobject></g></g><text x="0" y="-136" fill="black" stroke="none" id="mermaidChart33Text" style="text-anchor: middle;"> Computer Memory</text></g><g class="cluster" id="subGraph0" transform="translate(429.5,250)" style="opacity: 1;"><rect width="565" height="260" x="-282.5" y="-130"></rect><g class="label"><g transform="translate(0,0)"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignobject></g></g><text x="0" y="-116" fill="black" stroke="none" id="mermaidChart33Text" style="text-anchor: middle;"> User space</text></g><g class="cluster" id="subGraph1" transform="translate(829,302.5)" style="opacity: 1;"><rect width="134" height="115" x="-67" y="-57.5"></rect><g class="label"><g transform="translate(0,0)"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignobject></g></g><text x="0" y="-43.5" fill="black" stroke="none" id="mermaidChart33Text" style="text-anchor: middle;"> Kernel space</text></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M687,302.5L712,302.5L737,302.5L762,302.5L787,302.5" marker-end="url(#arrowhead1975)" style="fill:none"></path><defs><marker id="arrowhead1975" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M453,178.75L546,178.75L613.9090909090909,280" marker-end="url(#arrowhead1976)" style="fill:none"></path><defs><marker id="arrowhead1976" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M521,273.75L546,273.75L571,282.4096385542169" marker-end="url(#arrowhead1977)" style="fill:none"></path><defs><marker id="arrowhead1977" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M260.01612903225805,315L290,331.25L418,331.25L546,331.25L571,322.5903614457831" marker-end="url(#arrowhead1978)" style="fill:none"></path><defs><marker id="arrowhead1978" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M247.1,270L290,236.25L341.2,251.25" marker-end="url(#arrowhead1979)" style="fill:none"></path><defs><marker id="arrowhead1979" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M70.15789473684211,267.5L97,292.5L122,292.5L147,292.5L176.5,292.5" marker-end="url(#arrowhead1980)" style="fill:none"></path><defs><marker id="arrowhead1980" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M61.049180327868854,222.5L97,168.75L122,168.75L147,168.75L218.5,168.75L290,168.75L383,176.015625" marker-end="url(#arrowhead1981)" style="fill:none"></path><defs><marker id="arrowhead1981" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M445.1058823529412,435L546,351.25L590.6923076923077,325" marker-end="url(#arrowhead1982)" style="stroke: #333; fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead1982" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M227.75899280575538,65L290,216.25L383,189.00390625" marker-end="url(#arrowhead1983)" style="stroke: #333; fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead1983" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M228.25,435L290,292.5L315,288.837890625" marker-end="url(#arrowhead1984)" style="stroke: #333; fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead1984" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignobject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignobject></g></g></g><g class="nodes"><g class="node" id="C" transform="translate(829,302.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-42" y="-22.5" width="84" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.5)"><foreignobject width="64" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">系统内核</div></foreignobject></g></g></g><g class="node" id="APP" transform="translate(218.5,292.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-42" y="-22.5" width="84" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-32,-12.5)"><foreignobject width="64" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">应用程序</div></foreignobject></g></g></g><g class="node" id="D" transform="translate(418,273.75)" style="opacity: 1;"><rect rx="5" ry="5" x="-103" y="-22.5" width="206" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-93,-12.5)"><foreignobject width="186" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">C和C++以及第三方库函数</div></foreignobject></g></g></g><g class="node" id="A" transform="translate(629,302.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-58" y="-22.5" width="116" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48,-12.5)"><foreignobject width="96" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">系统调用接口</div></foreignobject></g></g></g><g class="node" id="B" transform="translate(418,178.75)" style="opacity: 1;"><rect rx="5" ry="5" x="-35" y="-22.5" width="70" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-25,-12.5)"><foreignobject width="50" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">SHELL</div></foreignobject></g></g></g><g class="node" id="USER" transform="translate(46,245)" style="opacity: 1;"><rect rx="5" ry="5" x="-26" y="-22.5" width="52" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-16,-12.5)"><foreignobject width="32" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">用户</div></foreignobject></g></g></g><g class="node" id="&#x5B66;&#x4E60;&#x91CD;&#x70B9;1" transform="translate(418,457.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-46.5" y="-22.5" width="93" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-36.5,-12.5)"><foreignobject width="73" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">学习重点1</div></foreignobject></g></g></g><g class="node" id="&#x5B66;&#x4E60;&#x91CD;&#x70B9;2" transform="translate(218.5,42.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-46.5" y="-22.5" width="93" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-36.5,-12.5)"><foreignobject width="73" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">学习重点2</div></foreignobject></g></g></g><g class="node" id="&#x5B66;&#x4E60;&#x91CD;&#x70B9;3" transform="translate(218.5,457.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-46.5" y="-22.5" width="93" height="45"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-36.5,-12.5)"><foreignobject width="73" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">学习重点3</div></foreignobject></g></g></g></g></g></g></svg></div>
+<p class="sync-line" data-line="163">User Space和Kernel Space是操作系统编程中常用的概念，表示当前的代码在用户空间还是内核空间运行，对于不同的运行空间，CPU对内存的处理方式稍有不同，在讲进程虚拟地址空间时再涉及该概念。</p>
+<p class="sync-line" data-line="165">系统调用指操作系统内核提供的功能，它提供了接口给用户空间代码调用。比如open/read/write/close等，都是属于Linux系统操作接口，而fopen/fread/fwrite/fclose是属于C标准提供的接口，在Linux下，fopen其实底层调用了open。</p>
+ </body>  </html>
